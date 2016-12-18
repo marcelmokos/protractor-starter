@@ -14,6 +14,6 @@ export default class About extends Page {
   };
 
   getCommon = () => new Common();
-  pageLink = this.getCommon().getHeaderNavigation().link.about;
+  pageLink = this.getCommon().getHeader().getNavigation().link.about;
 }
 

@@ -24,7 +24,7 @@ describe("Common", () => {
   });
 
   describe("navigation", () => {
-    const navigation = page.getCommon().getHeaderNavigation();
+    const navigation = page.getCommon().getHeader().getNavigation();
 
     it("should have 5 links", () => {
       expect(navigation.links.count()).toBe(5);
@@ -62,7 +62,7 @@ describe("Common", () => {
   });
 
   describe("sub navigation", () => {
-    const subNavigation = page.getCommon().getHeaderSubNavigation();
+    const subNavigation = page.getCommon().getHeader().getSubNavigation();
 
     it("should have 5 links", () => {
       expect(subNavigation.links.count()).toBe(5);

@@ -14,16 +14,17 @@ export default class UIComponent {
         "Class extends 'UIComponent' and have to implement abstract property 'selector' " +
         "when 'isDisplayed' or 'waitUntilDisplayed' are used"
       );
-}
-};
+    }
+  };
 
   /**
    * @returns Function which resolves to boolean
    */
   isDisplayed = () => {
     this.checkSelectorExist();
+
     return ExpectedConditions.visibilityOf(this.selector)();
-};
+  };
 
   waitUntilDisplayedTimeout = 5000;
 
@@ -38,7 +39,5 @@ export default class UIComponent {
       this.waitUntilDisplayedTimeout,
       `Failed while waiting for "${this.selector.locator()}" to display.`,
     );
-};
+  };
 }
-
-

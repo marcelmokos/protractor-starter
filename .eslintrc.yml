@@ -33,6 +33,19 @@ rules:
       ignoreTemplateLiterals: true
       ignoreRegExpLiterals: true
 
+  indent:
+    - error
+    - 2
+    -
+      ArrayExpression: 1
+      ObjectExpression: 1
+      SwitchCase: 1
+      MemberExpression: 1
+      FunctionDeclaration:
+        body: 1
+        parameters: 2
+      CallExpression:
+        arguments: 1
 
   import/default: 0
   import/prefer-default-export: 0
@@ -46,22 +59,46 @@ rules:
   comma-style: ["error", "last"]
   comma-dangle: ["error", "always-multiline"]
 
-  newline-per-chained-call: ["error", { "ignoreChainWithDepth": 2 }]
+  newline-per-chained-call: ["error", { "ignoreChainWithDepth": 4 }]
 
   array-bracket-spacing: ["error", "never"]
   object-curly-spacing: ["error", "never", { "objectsInObjects": true }]
 
+  no-trailing-spaces: "error"
+  no-multi-spaces: "error"
+  newline-before-return: "error"
   block-spacing: ["error", "always"]
   padded-blocks: ["error", "never"]
+  eol-last: ["error", "always"]
 
   quotes: ["error", "double"]
   quote-props: ["error", "as-needed"]
   curly: ["error", "all"]
+  camelcase: "error"
+
+  # ES6
+  arrow-parens: [2, "as-needed", { "requireForBlockBody": true }]
+  arrow-body-style: ["error", "as-needed"]
+  no-useless-computed-key: "error"
+  no-useless-rename: "error"
+  no-var: "error"
+  prefer-const: ["error", {"ignoreReadBeforeAssign": true}]
+  prefer-template: "error"
+  template-curly-spacing: ["error", "never"]
+
+  strict: ["error", "never"]
+  yoda: ["error", "never", { "exceptRange": true }]
+  dot-notation: ["error", { "allowKeywords": false }]
+  no-useless-return: "error"
+  no-implicit-coercion: "error"
+  prefer-spread: "error"
+  rest-spread-spacing: ["error", "never"]
+
+  protractor/no-browser-pause: 1
 
   no-unused-vars: 1
   no-console: 1
 
-
   protractor/no-absolute-url: 0
-  protractor/no-repetitive-selectors: 0
+  protractor/no-repetitive-selectors: 1
 

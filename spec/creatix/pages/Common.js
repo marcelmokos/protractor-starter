@@ -1,15 +1,11 @@
 import UIComponent from "../../utils/UIComponent";
 
-export default class Common  {
-  /**
-   * @returns {HeaderNavigation}
-   */
-  getHeaderNavigation = () => new HeaderNavigation();
+export default class Common {
 
   /**
-   * @returns {HeaderSubNavigation}
+   * @returns {Header}
    */
-  getHeaderSubNavigation = () => new HeaderSubNavigation();
+  getHeader = () => new Header();
 
   /**
    * @returns {Footer}
@@ -17,7 +13,26 @@ export default class Common  {
   getFooter = () => new Footer();
 }
 
-class HeaderNavigation extends UIComponent {
+class Header extends UIComponent {
+  selector = $("#header");
+
+  menuToggle = this.selector.$("#menu-toggle");
+
+  /**
+   * @returns {Navigation}
+   */
+  getNavigation = () => new Navigation();
+
+  /**
+   * @returns {SubNavigation}
+   */
+  getSubNavigation = () => new SubNavigation();
+}
+
+/**
+ * Header Navigation
+ */
+class Navigation extends UIComponent {
   selector = $("#menu.menu");
 
   links = this.selector.$$("li > a:not(.home):not(.submenu-item)");
@@ -31,10 +46,13 @@ class HeaderNavigation extends UIComponent {
   }
 }
 
-class HeaderSubNavigation extends UIComponent {
+/**
+ * Header Sub Navigation
+ */
+class SubNavigation extends UIComponent {
   selector = $("#about-subnav");
 
-  links = this.selector.$$("li > a");
+  links = this.selector.$$("li > a"); // eslint-disable-line protractor/no-repetitive-selectors
 }
 
 class Footer extends UIComponent {

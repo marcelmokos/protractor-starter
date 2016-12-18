@@ -14,5 +14,5 @@ export default class Work extends Page {
   };
 
   getCommon = () => new Common();
-  pageLink = this.getCommon().getHeaderNavigation().link.work;
+  pageLink = this.getCommon().getHeader().getNavigation().link.work;
 }

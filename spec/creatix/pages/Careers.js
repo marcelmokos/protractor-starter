@@ -14,6 +14,6 @@ export default class Careers extends Page {
   };
 
   getCommon = () => new Common();
-  pageLink = this.getCommon().getHeaderNavigation().link.careers;
+  pageLink = this.getCommon().getHeader().getNavigation().link.careers;
 }
 

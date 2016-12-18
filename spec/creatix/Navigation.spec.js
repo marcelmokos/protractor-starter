@@ -19,7 +19,7 @@ describe("Feature: navigation", () => {
     work,
   };
 
-  for (let pageName in scenarios) {
+  for (const pageName in scenarios) {
     describe(`when '${pageName}' page link is clicked`, () => {
       const page = scenarios[pageName];
       beforeAll(() => {
@@ -35,4 +35,44 @@ describe("Feature: navigation", () => {
       });
     });
   }
+
+  describe("responsive menu", () => {
+    const menuToggle = contact.getCommon().getHeader().menuToggle;
+
+    beforeAll(() => {
+      contact.get();
+    });
+
+    describe("when browser window maximized", () => {
+      it("then menu hamburger should not be visible", () => {
+        expect(menuToggle.isDisplayed()).toBe(false);
+      });
+    });
+
+    describe("when browser window tablet size", () => {
+      beforeAll(() => {
+        browser
+          .manage()
+          .window()
+          .setSize(768, 1024);
+      });
+
+      it("then menu hamburger should be visible", () => {
+        expect(menuToggle.isDisplayed()).toBe(true);
+      });
+    });
+
+    describe("when browser window iPhone5 size", () => {
+      beforeAll(() => {
+        browser
+          .manage()
+          .window()
+          .setSize(320, 568);
+      });
+
+      it("then menu hamburger should be visible", () => {
+        expect(menuToggle.isDisplayed()).toBe(true);
+      });
+    });
+  });
 });

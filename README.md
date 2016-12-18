@@ -17,6 +17,9 @@ yarn run test:multiple  // this run will ignore fdescribe and xdescribe
 ```
 
 ### Output
+
+![protractor-starter](https://cloud.githubusercontent.com/assets/6388074/21263992/0bd29294-c39a-11e6-8178-359eadeac719.gif)
+
 ```
 [23:43:53] I/direct - Using ChromeDriver directly...
 [23:43:53] I/launcher - Running 1 instances of WebDriver
@@ -98,6 +101,17 @@ Spec started
     3.5 when 'work' page link is clicked
       ✓ then page 'By(css selector, #page-work)' should be displayed (0.033 sec)
       ✓ then page link should have selected class (0.06 sec)
+ 
+    3.6 responsive menu
+  
+       3.6.1 when browser window maximized
+         ✓ then menu hamburger should not be visible (0.052 sec)
+  
+       3.6.2 when browser window tablet size
+         ✓ then menu hamburger should be visible (0.031 sec)
+  
+       3.6.3 when browser window iPhone5 size
+         ✓ then menu hamburger should be visible (0.026 sec)
  
 Executed 33 of 33 specs SUCCESS in 15 secs.
 [23:44:10] I/launcher - 0 instance(s) of WebDriver still running
@@ -204,4 +218,4 @@ https://yarnpkg.com/en/docs/install
 
 ### Eslint
 - web: http://eslint.org/
-- eslint-plugin-protractor :https://github.com/alecxe/eslint-plugin-protractor
+- eslint-plugin-protractor: https://github.com/alecxe/eslint-plugin-protractor

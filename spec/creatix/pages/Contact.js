@@ -14,5 +14,5 @@ export default class Contact extends Page {
   };
 
   getCommon = () => new Common();
-  pageLink = this.getCommon().getHeaderNavigation().link.contact;
+  pageLink = this.getCommon().getHeader().getNavigation().link.contact;
 }

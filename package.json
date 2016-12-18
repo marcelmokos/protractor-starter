@@ -1,6 +1,6 @@
 {
   "name": "protractor-starter",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "protractor-starter end-to-end tests setup for non angular application",
   "main": "index.js",
   "repository": {
@@ -13,8 +13,8 @@
     "start": "yarn run test",
     "test": "yarn install && yarn lint:fix && yarn run protractor",
     "test:multiple": "yarn install && yarn lint:fix && yarn run protractor -- --capabilities.shardTestFiles=true --capabilities.maxInstances=3",
-    "protractor": "node_modules/babel-cli/bin/babel-node.js node_modules/protractor/bin/protractor protractor-conf.js",
-    "lint:fix": "node_modules/eslint/bin/eslint.js \"spec/**\" --fix"
+    "protractor": "babel-node node_modules/protractor/bin/protractor protractor-conf.js",
+    "lint:fix": "eslint \"spec/**\" --fix"
   },
   "dependencies": {
     "babel": "latest",
