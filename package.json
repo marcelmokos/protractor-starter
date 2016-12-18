@@ -1,0 +1,39 @@
+{
+  "name": "protractor-starter",
+  "version": "0.0.1",
+  "description": "protractor end-to-end tests for non angular application",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/marcelmokos/protractor-starter.git",
+    "type": "git"
+  },
+  "author": "Marcel Mokoš",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run test",
+    "test": "yarn install && yarn lint:fix && yarn run protractor",
+    "protractor": "babel-node node_modules/protractor/bin/protractor protractor-conf.js",
+    "lint": "node_modules/eslint/bin/eslint.js spec",
+    "lint:fix": "node_modules/eslint/bin/eslint.js spec --fix"
+  },
+  "dependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.20.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "chromedriver": "^2.25.3",
+    "jasmine-spec-reporter": "^2.7.0",
+    "node-fetch": "^1.6.3",
+    "protractor": "^4.0.13"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-protractor": "^1.31.0",
+    "eslint-plugin-react": "latest"
+  }
+}

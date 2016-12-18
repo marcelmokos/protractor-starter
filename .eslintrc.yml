@@ -1,0 +1,39 @@
+---
+root: true
+
+parser: "babel-eslint"
+
+extends:
+  - eslint:recommended
+  - plugin:protractor/recommended
+
+plugins:
+  - import
+  - protractor
+
+env:
+  es6: true
+  browser: true
+  node: true
+  jasmine: true
+  protractor: true
+
+parserOptions:
+  ecmaVersion: 6
+  sourceType: module
+
+rules:
+
+  import/default: 0
+  import/prefer-default-export: 0
+  import/no-use-before-define: 0
+
+  semi: [2, "always"]
+#  semi: [2, "never"]
+  quotes: ["error", "double"]
+  quote-props: ["error", "as-needed"]
+  curly: ["error", "all"]
+
+  protractor/no-absolute-url: 0
+  protractor/no-repetitive-selectors: 0
+
