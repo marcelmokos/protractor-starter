@@ -1,8 +1,9 @@
-This protractor starter will help you test non angular applications using ES6 - ES2015 syntax. 
+This protractor starter will help you test also non angular applications using ES6 - ES2015 syntax. 
 
 - No configuration required
 - One command for setup and run
-- Linting and automatic code style fixing using Eslint build in
+- Linting and automatic code style fixing using Eslint build in, specially for protractor and jasmine
+- test examples using page object pattern
 
 ## Run tests
 
@@ -178,6 +179,11 @@ Automatic fixes for fixable problems like missing semicolons and so on.
 There are developers that do not use proper IDE which will provide linting and suggestions.
  
 Automatic fixes helps maintain code style and this starter have goal to improve code style of inexperienced developer. 
+
+#### VCS pre-commit hook linting
+Pre-commit hooks are scripts that run before each commit. 
+ 
+Decision of strong linting requires setting up tool to not allow inconsistent code to be committed into a repository.  
 
 #### Why 'yarn' instead of 'npm'
 This decision was done because 'yarn' is faster. 

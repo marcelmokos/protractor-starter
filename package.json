@@ -1,7 +1,7 @@
 {
   "name": "protractor-starter",
-  "version": "0.0.3",
-  "description": "protractor-starter end-to-end tests setup for non angular application",
+  "version": "0.0.4",
+  "description": "protractor-starter end-to-end tests setup also for non angular application",
   "main": "index.js",
   "repository": {
     "url": "https://github.com/marcelmokos/protractor-starter.git",
@@ -16,6 +16,9 @@
     "protractor": "babel-node node_modules/protractor/bin/protractor protractor-conf.js",
     "lint:fix": "eslint \"spec/**\" --fix"
   },
+  "pre-commit": [
+    "lint:fix"
+  ],
   "dependencies": {
     "babel": "latest",
     "babel-cli": "latest",
@@ -31,6 +34,7 @@
     "babel-eslint": "latest",
     "eslint": "latest",
     "eslint-plugin-import": "latest",
-    "eslint-plugin-protractor": "latest"
+    "eslint-plugin-protractor": "latest",
+    "pre-commit": "latest"
   }
 }
