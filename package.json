@@ -1,6 +1,6 @@
 {
   "name": "protractor-starter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "protractor-starter end-to-end tests setup also for non angular application",
   "main": "index.js",
   "repository": {

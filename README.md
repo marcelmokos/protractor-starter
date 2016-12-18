@@ -2,8 +2,8 @@ This protractor starter will help you test also non angular applications using E
 
 - No configuration required
 - One command for setup and run
-- Linting and automatic code style fixing using Eslint build in, specially for protractor and jasmine
-- test examples using page object pattern
+- Linting and automatic code style fixing using eslint build in, specially for protractor and jasmine
+- Test examples using page object pattern
 
 ## Run tests
 
@@ -12,9 +12,9 @@ On single browser instance
 yarn test
 ```
 
-On multiple browser instances
+On multiple browser instances in parallel
 ```
-yarn run test:multiple  // this run will ignore fdescribe and xdescribe
+yarn run test:multiple  // this run will ignore fdescribe and run all tests
 ```
 
 ### Output
@@ -128,7 +128,7 @@ This project will give you good starting point for your own tests.
 #### Page object pattern and feature testing
 Another barrier is that there are no good examples of tests with page Object pattern.
  
-This project includes example which is testing single page app using Object pattern and feature testing.
+This project includes example which is testing single page app using Page Object pattern and feature testing.
 
 ```
 spec
@@ -154,7 +154,7 @@ All selectors and functions should be placed in Page Object Class. Class should 
  
 Page object files should export only one Page Class as default export and extends ```spec/utils/Page.js``` and implement abstract property 'selector'. 
  
-This will allow you to use ```isDisplayed``` and ```waitUntilDisplayed``` functions and you can avoid repeating boilerplate for this functionality which is needed because there is no synchronization with angular.
+This will allow you to use ```isDisplayed``` and ```waitUntilDisplayed``` functions and you can avoid repeating boilerplate for this functionality which is needed because there is no synchronization as with angular application.
 
 ##### Feature testing
 The files structure of the project should wrap around features instead of pages. 
@@ -204,7 +204,7 @@ To update or reinstall all dependencies.
 - reinstall ```yarn install --force```
 
 #### Usage with angular
-from ```protractor-conf.js``` remove ```browser.ignoreSynchronization = true;```
+from ```protractor-conf.js``` remove ```browser.ignoreSynchronization = true;``` it will start listening and waiting for angular calls to finish. 
 
 ## Dependencies 
 

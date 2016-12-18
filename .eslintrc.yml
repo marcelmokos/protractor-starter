@@ -1,10 +1,11 @@
 ---
 root: true
 
-parser: "babel-eslint"
-
+parser: babel-eslint
 extends:
+  # http://eslint.org/docs/user-guide/configuring#using-eslintrecommended
   - eslint:recommended
+  # https://github.com/alecxe/eslint-plugin-protractor
   - plugin:protractor/recommended
 
 plugins:
@@ -51,48 +52,56 @@ rules:
   import/prefer-default-export: 0
   import/no-use-before-define: 0
 
-  semi: ["error", "always"]
-  no-extra-semi: "error"
-  semi-spacing: "error"
-  space-in-parens: ["error", "never"]
+  semi: [error, always]
+  no-extra-semi: error
+  semi-spacing: error
+  space-in-parens: [error, never]
 
-  comma-style: ["error", "last"]
-  comma-dangle: ["error", "always-multiline"]
+  comma-style: [error, last]
+  comma-dangle: [error, always-multiline]
 
-  newline-per-chained-call: ["error", { "ignoreChainWithDepth": 4 }]
+  newline-per-chained-call: [error, { ignoreChainWithDepth: 4 }]
 
-  array-bracket-spacing: ["error", "never"]
-  object-curly-spacing: ["error", "never", { "objectsInObjects": true }]
+  array-bracket-spacing: [error, never]
+  object-curly-spacing: [error, never, { objectsInObjects: true }]
+  brace-style: [error, stroustrup]
 
-  no-trailing-spaces: "error"
-  no-multi-spaces: "error"
-  newline-before-return: "error"
-  block-spacing: ["error", "always"]
-  padded-blocks: ["error", "never"]
-  eol-last: ["error", "always"]
+  no-trailing-spaces: error
+  no-multi-spaces: error
+  newline-before-return: error
+  block-spacing: [error, always]
+  padded-blocks: [error, never]
+  no-multiple-empty-lines: error
+  eol-last: [error, always]
 
-  quotes: ["error", "double"]
-  quote-props: ["error", "as-needed"]
-  curly: ["error", "all"]
-  camelcase: "error"
+  quotes: [error, double]
+  quote-props: [error, as-needed]
+  curly: [error, all]
+  camelcase: error
 
   # ES6
-  arrow-parens: [2, "as-needed", { "requireForBlockBody": true }]
-  arrow-body-style: ["error", "as-needed"]
-  no-useless-computed-key: "error"
-  no-useless-rename: "error"
-  no-var: "error"
-  prefer-const: ["error", {"ignoreReadBeforeAssign": true}]
-  prefer-template: "error"
-  template-curly-spacing: ["error", "never"]
+  arrow-parens: [2, as-needed, { requireForBlockBody: true }]
+  arrow-body-style: [error, as-needed]
+  no-useless-computed-key: error
+  no-useless-rename: error
+  no-var: error
+  prefer-const: [error, { ignoreReadBeforeAssign: true }]
+  prefer-template: error
+  template-curly-spacing: [error, never]
+  lines-around-directive:
+    - error
+    -
+      before: always
+      after: always
+  no-spaced-func: 2
 
-  strict: ["error", "never"]
-  yoda: ["error", "never", { "exceptRange": true }]
-  dot-notation: ["error", { "allowKeywords": false }]
-  no-useless-return: "error"
-  no-implicit-coercion: "error"
-  prefer-spread: "error"
-  rest-spread-spacing: ["error", "never"]
+  strict: [error, never]
+  yoda: [error, never, { exceptRange: true }]
+  dot-notation: [error, { allowKeywords: false }]
+  no-useless-return: error
+  no-implicit-coercion: error
+  prefer-spread: error
+  rest-spread-spacing: [error, never]
 
   protractor/no-browser-pause: 1
 
