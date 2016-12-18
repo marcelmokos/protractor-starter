@@ -1,30 +1,13 @@
-import {Page} from "./../../utils/Page";
-import {UIComponent} from "./../../utils/UIComponent";
+import Page from "../../utils/Page";
+import Common from "./Common";
 
 export default class Homepage extends Page {
+  selector = $("#page-main");
+
   get = () => {
     browser.get("http://www.thinkcreatix.com/");
     this.waitUntilDisplayed();
   };
 
-  selector = $("#page-main");
-
-  /**
-   * @returns {HeaderNavigation}
-   */
-  getHeaderNavigation = () => new HeaderNavigation();
-  getHeaderSubNavigation = () => new HeaderSubNavigation();
+  getCommon = () => new Common();
 }
-
-class HeaderNavigation extends UIComponent {
-  selector = $("#menu.menu");
-
-  items = this.selector.$$("li > a:not(.home):not(.submenu-item)");
-}
-
-class HeaderSubNavigation extends UIComponent {
-  selector = $("#about-subnav");
-
-  items = this.selector.$$("li > a");
-}
-

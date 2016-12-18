@@ -23,16 +23,44 @@ parserOptions:
   sourceType: module
 
 rules:
+  max-len:
+    - error
+    -
+      code: 100
+      ignoreComments: true
+      ignoreTrailingComments: true
+      ignoreStrings: true
+      ignoreTemplateLiterals: true
+      ignoreRegExpLiterals: true
+
 
   import/default: 0
   import/prefer-default-export: 0
   import/no-use-before-define: 0
 
-  semi: [2, "always"]
-#  semi: [2, "never"]
+  semi: ["error", "always"]
+  no-extra-semi: "error"
+  semi-spacing: "error"
+  space-in-parens: ["error", "never"]
+
+  comma-style: ["error", "last"]
+  comma-dangle: ["error", "always-multiline"]
+
+  newline-per-chained-call: ["error", { "ignoreChainWithDepth": 2 }]
+
+  array-bracket-spacing: ["error", "never"]
+  object-curly-spacing: ["error", "never", { "objectsInObjects": true }]
+
+  block-spacing: ["error", "always"]
+  padded-blocks: ["error", "never"]
+
   quotes: ["error", "double"]
   quote-props: ["error", "as-needed"]
   curly: ["error", "all"]
+
+  no-unused-vars: 1
+  no-console: 1
+
 
   protractor/no-absolute-url: 0
   protractor/no-repetitive-selectors: 0

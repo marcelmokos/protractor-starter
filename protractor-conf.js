@@ -9,7 +9,7 @@ exports.config = {
     print: function () {}
   },
   onPrepare: function () {
-    require("babel-core/register"); // eslint-disable-line
+    require("babel-core/register");
 
     browser.ignoreSynchronization = true;
 
@@ -26,7 +26,7 @@ exports.config = {
 
         displayPendingSpec: true,       // display each pending spec
         displaySpecDuration: true,      // display each spec duration
-        displaySuiteNumber: true        // display each suite number (hierarchical)
+        displaySuiteNumber: true,       // display each suite number (hierarchical)
       })
     );
   },
