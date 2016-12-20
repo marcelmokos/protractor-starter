@@ -7,6 +7,16 @@
     "url": "https://github.com/marcelmokos/protractor-starter.git",
     "type": "git"
   },
+  "bugs": {
+    "url": "https://github.com/marcelmokos/protractor-starter/issues"
+  },
+  "keywords": [
+    "protractor",
+    "starter",
+    "page object pattern",
+    "testing",
+    "end to end testing"
+  ],
   "author": "Marcel Mokoš",
   "license": "MIT",
   "scripts": {
