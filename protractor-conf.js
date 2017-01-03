@@ -1,16 +1,16 @@
 //noinspection JSUnusedGlobalSymbols
-exports.config = {
-  framework: "jasmine",
+import {SpecReporter} from "jasmine-spec-reporter";
+
+export const config = {
+  framework: "jasmine2",
   specs: ["spec/**/*.spec.js"],
   directConnect: true,
-  chromeDriver: "node_modules/chromedriver/lib/chromedriver/chromedriver",
+  chromeDriver: "node_modules/.bin/chromedriver",
   jasmineNodeOpts: {
     // remove ugly protractor dot reporter
-    print: function () {}
+    print: function () {},
   },
   onPrepare: function () {
-    require("babel-core/register");
-
     /**
      * If you are testing against a non-angular site - set ignoreSynchronization setting to true
      *
@@ -24,24 +24,26 @@ exports.config = {
      */
     browser.ignoreSynchronization = true;
 
-    const env = jasmine.getEnv();
-    const SpecReporter = require("jasmine-spec-reporter");
-
-    env.addReporter(
+    jasmine.getEnv().addReporter(
       new SpecReporter({
-
         // Defaults: https://github.com/bcaudan/jasmine-spec-reporter#default-options
-        displaySuccessesSummary: false, // display summary of all successes after execution
-        displayFailuresSummary: false,  // display summary of all failures after execution
-        displayPendingSummary: false,   // display summary of all pending specs after execution
-
-        displayPendingSpec: true,       // display each pending spec
-        displaySpecDuration: true,      // display each spec duration
-        displaySuiteNumber: true,       // display each suite number (hierarchical)
+        // Configuration: https://github.com/bcaudan/jasmine-spec-reporter/blob/master/src/configuration.ts
+        suite: {
+          displayNumber: true,    // display each suite number (hierarchical)
+        },
+        spec: {
+          displayPending: true,   // display each pending spec
+          displayDuration: true,  // display each spec duration
+        },
+        summary: {
+          displaySuccesses: false, // display summary of all successes after execution
+          displayFailed: false,    // display summary of all failures after execution
+          displayPending: false,   // display summary of all pending specs after execution
+        },
       })
     );
   },
   capabilities: {
-    browserName: "chrome"
+    browserName: "chrome",
   },
 };

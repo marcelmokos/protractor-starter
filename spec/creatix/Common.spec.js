@@ -57,7 +57,7 @@ describe("Common", () => {
     testLink({
       element: navigation.links.get(4),
       href: "/contact",
-      text: "Contact",
+      text: "Get in Touch",
     });
   });
 

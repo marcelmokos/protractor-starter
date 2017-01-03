@@ -1,5 +1,6 @@
 This protractor starter will help you test also non angular applications using ES6 - ES2015 syntax. 
 
+- Modern javascript ES6 - ES2015 syntax
 - No configuration required
 - One command for setup and run
 - Linting and automatic code style fixing using eslint build in, specially for protractor and jasmine
@@ -14,7 +15,7 @@ yarn test
 
 On multiple browser instances in parallel
 ```
-yarn run test:multiple  // this run will ignore fdescribe and run all tests
+yarn run test:multiple  // this run will ignore fdescribe and run all test files
 ```
 
 ### Output
@@ -123,12 +124,12 @@ Executed 33 of 33 specs SUCCESS in 15 secs.
 ### Motivation 
 The greatest barrier for starting with end-to-end testing is tooling setup. 
  
-This project will give you good starting point for your own tests. 
+This project will give you good starting point for your own E2E testing.
  
 #### Page object pattern and feature testing
 Another barrier is that there are no good examples of tests with page Object pattern.
  
-This project includes example which is testing single page app using Page Object pattern and feature testing.
+This project includes examples of testing single page app using Page Object pattern and feature testing.
 
 ```
 spec
@@ -136,7 +137,7 @@ spec
 │   ├── Common.spec.js
 │   ├── Homepage.spec.js
 │   ├── Navigation.spec.js
-│   └── pages
+│   └── pages // page objects
 │       ├── About.js
 │       ├── Blog.js
 │       ├── Careers.js
@@ -162,7 +163,7 @@ The files structure of the project should wrap around features instead of pages.
 #### ES6
 I can not see ES5 syntax anymore, this example is written exclusively in ES6.
  
-There is no visible compilation no webpack, you have correct line numbers in errors and logs.
+There is no visible compilation step, you have correct line numbers in errors and logs which is important for developer experience.
 
 #### Strong linting and automatic code style fixing
 Set up linting is not easy and set up linting to work with testing frameworks is even more complicated.
@@ -192,7 +193,7 @@ To make it simple on every run all dependencies are installed.
 
 All dependencies are in project and no dependencies needs to be installed globally.
  
-Only node and yarn are required.
+Only node and yarn are required globally.
 
 #### Why all dependencies have version 'latest'
 Latest version numbers will be in yarn.lock

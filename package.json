@@ -21,9 +21,10 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn run test",
-    "test": "yarn install && yarn lint:fix && yarn run protractor",
-    "test:multiple": "yarn install && yarn lint:fix && yarn run protractor -- --capabilities.shardTestFiles=true --capabilities.maxInstances=3",
-    "protractor": "babel-node node_modules/protractor/bin/protractor protractor-conf.js",
+    "pretest": "yarn install && yarn run lint:fix",
+    "test": "yarn pretest && yarn run protractor",
+    "test:multiple": "yarn pretest && yarn run protractor -- --capabilities.shardTestFiles=true --capabilities.maxInstances=3",
+    "protractor": "babel-node node_modules/.bin/protractor protractor-conf.js",
     "lint:fix": "eslint \"spec/**\" --fix"
   },
   "pre-commit": [
