@@ -8,11 +8,13 @@ export default class UIComponent {
    */
   selector = undefined;
 
+  constructor() {}
+
   checkSelectorExist = () => {
     if (this.selector === undefined) {
       throw new TypeError(
-        `Page Object Class '${this.constructor.name}' ` +
-        "extends 'UIComponent' and have to implement abstract property 'selector' " +
+        `Class '${this.constructor.name}' ` +
+        "extends 'UIComponent' possibly 'Page' Object Class and have to implement abstract property 'selector' " +
         "when 'isDisplayed' or 'waitUntilDisplayed' are used"
       );
     }

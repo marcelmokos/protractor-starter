@@ -10,6 +10,7 @@ extends:
 
 plugins:
   - import
+  - async-await
   - protractor
 
 env:
@@ -20,20 +21,23 @@ env:
   protractor: true
 
 parserOptions:
-  ecmaVersion: 6
+  ecmaVersion: 2017
   sourceType: module
 
 rules:
+  # enforce a maximum line length
+  # http://eslint.org/docs/rules/max-len
   max-len:
     - error
     -
-      code: 100
+      code: 80
       ignoreComments: true
       ignoreTrailingComments: true
       ignoreStrings: true
       ignoreTemplateLiterals: true
       ignoreRegExpLiterals: true
 
+  # http://eslint.org/docs/rules/indent
   indent:
     - error
     - 2
@@ -62,6 +66,7 @@ rules:
 
   newline-per-chained-call: [error, { ignoreChainWithDepth: 4 }]
 
+  # enforce spacing inside array brackets
   array-bracket-spacing: [error, never]
   object-curly-spacing: [error, never, { objectsInObjects: true }]
   brace-style: [error, 1tbs]
@@ -69,6 +74,8 @@ rules:
   no-trailing-spaces: error
   no-multi-spaces: error
   newline-before-return: error
+  # enforce spacing inside single-line blocks
+  # http://eslint.org/docs/rules/block-spacing
   block-spacing: [error, always]
   padded-blocks: [error, never]
   no-multiple-empty-lines: error
@@ -110,4 +117,8 @@ rules:
   protractor/no-browser-pause: 1
   protractor/no-absolute-url: 0
   protractor/no-repetitive-selectors: 1
+
+  # Async await
+  async-await/space-after-async: 2
+  async-await/space-after-await: 2
 

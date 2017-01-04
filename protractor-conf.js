@@ -45,5 +45,9 @@ export const config = {
   },
   capabilities: {
     browserName: "chrome",
+    chromeOptions: {
+      // http://peter.sh/experiments/chromium-command-line-switches/#test-type
+      args: ["--test-type"],
+    },
   },
 };

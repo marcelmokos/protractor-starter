@@ -23,102 +23,123 @@ yarn run test:multiple  // this run will ignore fdescribe and run all test files
 ![protractor-starter](https://cloud.githubusercontent.com/assets/6388074/21263992/0bd29294-c39a-11e6-8178-359eadeac719.gif)
 
 ```
-[23:43:53] I/direct - Using ChromeDriver directly...
-[23:43:53] I/launcher - Running 1 instances of WebDriver
+[22:50:56] I/direct - Using ChromeDriver directly...
+[22:50:56] I/launcher - Running 1 instances of WebDriver
 Spec started
 
   1 Common
- 
+
     1.1 navigation
-      ✓ should have 5 links (0.072 sec)
- 
+      ✓ should have 5 links (0.501 sec)
+
       1.1.1 link "Work"
-        ✓ should contain href '/work' (0.139 sec)
-        ✓ should have text 'Work' (0.085 sec)
- 
+        ✓ should contain href '/work' (0.297 sec)
+        ✓ should have text 'Work' (0.184 sec)
+
       1.1.2 link "About"
-        ✓ should contain href '/about' (0.045 sec)
-        ✓ should have text 'About' (0.066 sec)
- 
+        ✓ should contain href '/about' (0.305 sec)
+        ✓ should have text 'About' (0.155 sec)
+
       1.1.3 link "Careers"
-        ✓ should contain href '/careers' (0.06 sec)
-        ✓ should have text 'Careers' (0.044 sec)
- 
+        ✓ should contain href '/careers' (0.147 sec)
+        ✓ should have text 'Careers' (0.103 sec)
+
       1.1.4 link "Blog"
-        ✓ should contain href '/blog' (0.027 sec)
-        ✓ should have text 'Blog' (0.051 sec)
- 
-      1.1.5 link "Contact"
-        ✓ should contain href '/contact' (0.035 sec)
-        ✓ should have text 'Contact' (0.041 sec)
- 
+        ✓ should contain href '/blog' (0.054 sec)
+        ✓ should have text 'Blog' (0.096 sec)
+
+      1.1.5 link "Get in Touch"
+        ✓ should contain href '/contact' (0.072 sec)
+        ✓ should have text 'Get in Touch' (0.118 sec)
+
     1.2 sub navigation
-      ✓ should have 5 links (0.047 sec)
- 
+      ✓ should have 5 links (0.062 sec)
+
     1.3 footer
- 
+
       1.3.1 link "hello@thinkcreatix.com"
-        ✓ should contain href 'mailto:hello@thinkcreatix.com' (0.067 sec)
-        ✓ should have text 'hello@thinkcreatix.com' (0.052 sec)
- 
+        ✓ should contain href 'mailto:hello@thinkcreatix.com' (0.09 sec)
+        ✓ should have text 'hello@thinkcreatix.com' (0.218 sec)
+
       1.3.2 link "(630) 404-9413"
-        ✓ should contain href 'tel:6304049413' (0.05 sec)
-        ✓ should have text '(630) 404-9413' (0.049 sec)
- 
+        ✓ should contain href 'tel:6304049413' (0.058 sec)
+        ✓ should have text '(630) 404-9413' (0.071 sec)
+
       1.3.3 link "Facebook"
-        ✓ should contain href 'https://www.facebook.com/CreatixInc' (0.058 sec)
-        ✓ should have text 'Facebook' (0.055 sec)
- 
+        ✓ should contain href 'https://www.facebook.com/CreatixInc' (0.09 sec)
+        ✓ should have text 'Facebook' (0.393 sec)
+
       1.3.4 link "LinkedIn"
-        ✓ should contain href 'https://www.linkedin.com/company/creatix-inc-' (0.048 sec)
-        ✓ should have text 'LinkedIn' (0.05 sec)
- 
+        ✓ should contain href 'https://www.linkedin.com/company/creatix-inc-' (0.218 sec)
+        ✓ should have text 'LinkedIn' (0.138 sec)
+
       1.3.5 copyright
-        ✓ should contain 'Creatix Inc.' (0.057 sec)
-        ✓ should contain 'All Right Reserved' (0.052 sec)
- 
-  2 homepage
- 
-    2.1 when on homepage
-      ✓ then page should be displayed (0.04 sec)
- 
-  3 Feature: navigation
- 
-    3.1 when 'about' page link is clicked
-      ✓ then page 'By(css selector, #page-about)' should be displayed (0.047 sec)
-      ✓ then page link should have selected class (0.05 sec)
- 
-    3.2 when 'blog' page link is clicked
-      ✓ then page 'By(css selector, #page-blog)' should be displayed (0.063 sec)
-      ✓ then page link should have selected class (0.063 sec)
- 
-    3.3 when 'careers' page link is clicked
-      ✓ then page 'By(css selector, #page-careers)' should be displayed (0.036 sec)
-      ✓ then page link should have selected class (0.042 sec)
- 
-    3.4 when 'contact' page link is clicked
-      ✓ then page 'By(css selector, #page-contact)' should be displayed (0.047 sec)
+        ✓ should contain 'Creatix Inc.' (0.072 sec)
+        ✓ should contain 'All Right Reserved' (0.07 sec)
+
+  2 Feature: Contact Form
+
+    2.1 when on contact page
+      ✓ then page should be displayed (0.08 sec)
+      ✓ then contact form should be displayed (0.288 sec)
+
+      2.1.1 inputs
+
+        2.1.1.1 name
+          ✓ should be able to change text value (0.315 sec)
+
+        2.1.1.2 phone
+          ✓ should be able to change text value (0.27 sec)
+
+        2.1.1.3 type of project
+
+          2.1.1.3.1 when page loads 
+            ✓ then all project types should not be selected (0.556 sec)
+
+          2.1.1.3.2 when all types selected
+            ✓ then all project types should be selected (0.444 sec)
+
+  3 homepage
+
+    3.1 when on homepage
+      ✓ then page should be displayed (0.224 sec)
+
+  4 Feature: navigation
+
+    4.1 when 'about' page link is clicked
+      ✓ then page 'By(css selector, #page-about)' should be displayed (0.043 sec)
+      ✓ then page link should have selected class (0.079 sec)
+
+    4.2 when 'blog' page link is clicked
+      ✓ then page 'By(css selector, #page-blog)' should be displayed (0.039 sec)
       ✓ then page link should have selected class (0.051 sec)
- 
-    3.5 when 'work' page link is clicked
-      ✓ then page 'By(css selector, #page-work)' should be displayed (0.033 sec)
-      ✓ then page link should have selected class (0.06 sec)
- 
-    3.6 responsive menu
-  
-       3.6.1 when browser window maximized
-         ✓ then menu hamburger should not be visible (0.052 sec)
-  
-       3.6.2 when browser window tablet size
-         ✓ then menu hamburger should be visible (0.031 sec)
-  
-       3.6.3 when browser window iPhone5 size
-         ✓ then menu hamburger should be visible (0.026 sec)
- 
-Executed 33 of 33 specs SUCCESS in 15 secs.
-[23:44:10] I/launcher - 0 instance(s) of WebDriver still running
-[23:44:10] I/launcher - chrome #01 passed
-✨  Done in 18.76s.
+
+    4.3 when 'careers' page link is clicked
+      ✓ then page 'By(css selector, #page-careers)' should be displayed (0.064 sec)
+      ✓ then page link should have selected class (0.058 sec)
+
+    4.4 when 'contact' page link is clicked
+      ✓ then page 'By(css selector, #page-contact)' should be displayed (0.059 sec)
+      ✓ then page link should have selected class (0.063 sec)
+
+    4.5 when 'work' page link is clicked
+      ✓ then page 'By(css selector, #page-work)' should be displayed (0.042 sec)
+      ✓ then page link should have selected class (0.041 sec)
+
+    4.6 responsive menu
+
+      4.6.1 when browser window maximized
+        ✓ then menu hamburger should not be visible (0.096 sec)
+
+      4.6.2 when browser window tablet size
+        ✓ then menu hamburger should be visible (0.068 sec)
+
+      4.6.3 when browser window iPhone5 size
+        ✓ then menu hamburger should be visible (0.034 sec)
+
+Executed 42 of 42 specs SUCCESS in 33 secs.
+[22:51:30] I/launcher - 0 instance(s) of WebDriver still running
+[22:51:30] I/launcher - chrome #01 passed
 ```
 
 ### Motivation 
@@ -195,7 +216,7 @@ All dependencies are in project and no dependencies needs to be installed global
  
 Only node and yarn are required globally.
 
-#### Why all dependencies have version 'latest'
+#### How to update or reinstall all dependencies
 Latest version numbers will be in yarn.lock
  
 To update or reinstall all dependencies.

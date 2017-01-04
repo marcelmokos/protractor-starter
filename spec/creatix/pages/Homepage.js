@@ -1,5 +1,5 @@
-import Page from "../../utils/Page";
 import Common from "./Common";
+import Page from "../../utils/Page";
 
 export default class Homepage extends Page {
   selector = $("#page-main");
@@ -13,7 +13,8 @@ export default class Homepage extends Page {
       .window()
       .maximize();
 
-    browser.get("http://www.thinkcreatix.com/");
+    browser.baseUrl = "http://www.thinkcreatix.com/";
+    browser.get("/");
     this.waitUntilDisplayed();
   };
 
