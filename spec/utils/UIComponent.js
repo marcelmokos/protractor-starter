@@ -8,8 +8,6 @@ export default class UIComponent {
    */
   selector = undefined;
 
-  constructor() {}
-
   checkSelectorExist = () => {
     if (this.selector === undefined) {
       throw new TypeError(

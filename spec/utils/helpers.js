@@ -3,7 +3,7 @@ import {scrollIntoView} from "./scrollIntoView";
 /**
  * @param element {ElementFinder}
  */
-export const getElementId = async element => await (element.getAttribute("id"));
+export const getElementId = async element => element.getAttribute("id");
 
 /**
  * @param inputElement {ElementFinder}

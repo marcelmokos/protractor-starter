@@ -19,7 +19,7 @@ describe("Feature: navigation", () => {
     work,
   };
 
-  for (const pageName in scenarios) {
+  Object.keys(scenarios).forEach((pageName) => {
     describe(`when '${pageName}' page link is clicked`, () => {
       const page = scenarios[pageName];
       beforeAll(() => {
@@ -34,7 +34,7 @@ describe("Feature: navigation", () => {
         expect(page.pageLink.getAttribute("class")).toContain("sel");
       });
     });
-  }
+  });
 
   describe("responsive menu", () => {
     const menuToggle = contact.getCommon().getHeader().menuToggle;
