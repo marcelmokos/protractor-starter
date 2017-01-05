@@ -13,7 +13,7 @@ export default class UIComponent {
       throw new TypeError(
         `Class '${this.constructor.name}' ` +
         "extends 'UIComponent' possibly 'Page' Object Class and have to implement abstract property 'selector' " +
-        "when 'isDisplayed' or 'waitUntilDisplayed' are used"
+        "when 'isDisplayed' or 'waitUntilDisplayed' are used",
       );
     }
   };

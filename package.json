@@ -26,10 +26,11 @@
     "test:multiple": "yarn pretest && yarn run protractor -- --capabilities.shardTestFiles=true --capabilities.maxInstances=3",
     "protractor": "babel-node node_modules/.bin/protractor protractor-conf.js",
     "lint": "eslint \"spec/**\" --cache",
-    "lint:fix": "yarn run lint -- --fix"
+    "lint:fix": "yarn run lint -- --fix",
+    "lint:pre-comit": "yarn run lint -- --fix --rule 'no-console:2' --rule 'no-debugger:2' --rule 'protractor/no-browser-pause:2'"
   },
   "pre-commit": [
-    "lint:fix"
+    "lint:pre-comit"
   ],
   "dependencies": {
     "babel": "^6.5.2",

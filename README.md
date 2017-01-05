@@ -189,12 +189,7 @@ There is no visible compilation step, you have correct line numbers in errors an
 #### Strong linting and automatic code style fixing
 Set up linting is not easy and set up linting to work with testing frameworks is even more complicated.
  
-This project has linting setup in ```.eslintrc.yml``` setting is opinionated but defaults are close to ```eslint-airbnb-config```.
-
-```eslint-airbnb-config``` was not used because we do not need react in this project.
-
-- npm: https://www.npmjs.com/package/eslint-config-airbnb
-- git: https://github.com/airbnb/javascript
+This project has linting setup in ```.eslintrc.yml``` setting were inherid from ```eslint-config-airbnb-base``` and ```eslint-plugin-protractor```.
 
 Automatic fixes for fixable problems like missing semicolons and so on. 
 
@@ -246,4 +241,10 @@ https://yarnpkg.com/en/docs/install
 
 ### Eslint
 - web: http://eslint.org/
-- eslint-plugin-protractor: https://github.com/alecxe/eslint-plugin-protractor
+- eslint-config-airbnb-base: 
+  - github: https://github.com/airbnb/javascript
+  - npm: https://www.npmjs.com/package/eslint-config-airbnb-base
+- eslint-plugin-protractor: 
+  - github: https://github.com/alecxe/eslint-plugin-protractor
+  - npm: https://www.npmjs.com/package/eslint-plugin-protractor
+

@@ -1,4 +1,4 @@
-import {scrollIntoView} from "./scrollIntoView";
+import scrollIntoView from "./scrollIntoView";
 
 /**
  * @param element {ElementFinder}

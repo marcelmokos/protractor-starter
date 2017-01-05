@@ -1,5 +1,5 @@
 import Contact from "./pages/Contact";
-import {clickOnInputLabel} from "./../utils/helpers";
+import { clickOnInputLabel } from "./../utils/helpers";
 
 const contact = new Contact();
 const contactForm = contact.getContactForm();

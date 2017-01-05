@@ -5,8 +5,9 @@ parser: babel-eslint
 extends:
   # http://eslint.org/docs/user-guide/configuring#using-eslintrecommended
   - eslint:recommended
-  # https://github.com/alecxe/eslint-plugin-protractor
+  # https://www.npmjs.com/package/eslint-plugin-protractor
   - plugin:protractor/recommended
+  # https://www.npmjs.com/package/eslint-config-airbnb-base
   - airbnb-base
 
 plugins:
@@ -26,101 +27,53 @@ parserOptions:
   sourceType: module
 
 rules:
-  # enforce a maximum line length
-  # http://eslint.org/docs/rules/max-len
-  max-len:
+  ### Different from airbnb config
+
+  ### Styling ###
+
+  # I prefer new line before error
+  # http://eslint.org/docs/rules/newline-before-return
+  newline-before-return: error # airbnb default: off
+
+  # I prefer double quotes
+  # http://eslint.org/docs/rules/quotes
+  quotes: [error, double] # airbnb default: ['error', 'single', { avoidEscape: true }]
+
+  ### Variables ###
+
+  # Functions and classes can be used before declaration
+  # http://eslint.org/docs/rules/no-use-before-define
+  no-use-before-define: # airbnb default: error
     - error
     -
-      code: 80
-      ignoreComments: true
-      ignoreTrailingComments: true
-      ignoreStrings: true
-      ignoreTemplateLiterals: true
-      ignoreRegExpLiterals: true
+      functions: false
+      classes: false
 
-  # http://eslint.org/docs/rules/indent
-  indent:
-    - error
-    - 2
-    -
-      ArrayExpression: 1
-      ObjectExpression: 1
-      SwitchCase: 1
-      MemberExpression: 1
-      FunctionDeclaration:
-        body: 1
-        parameters: 2
-      CallExpression:
-        arguments: 1
+  ### ES6 ###
+  # enforce usage of spacing in template strings
+  # http://eslint.org/docs/rules/template-curly-spacing
+  template-curly-spacing: [error, never] # airbnb default: error
 
-  import/default: 0
-  import/prefer-default-export: 0
-  no-use-before-define: 0
-  import/no-use-before-define: 0
-
-  semi: [error, always]
-  no-extra-semi: error
-  semi-spacing: error
-  space-in-parens: [error, never]
-
-  comma-style: [error, last]
-  comma-dangle: [error, always-multiline]
-
-  newline-per-chained-call: [error, { ignoreChainWithDepth: 4 }]
-
-  # enforce spacing inside array brackets
-  array-bracket-spacing: [error, never]
-  object-curly-spacing: [error, never, { objectsInObjects: true }]
-  brace-style: [error, 1tbs]
-
-  no-trailing-spaces: error
-  no-multi-spaces: error
-  newline-before-return: error
-  # enforce spacing inside single-line blocks
-  # http://eslint.org/docs/rules/block-spacing
-  block-spacing: [error, always]
-  padded-blocks: [error, never]
-  no-multiple-empty-lines: error
-  eol-last: [error, always]
-
-  quotes: [error, double]
-  quote-props: [error, as-needed]
-  curly: [error, all]
-  camelcase: error
-
-  # ES6
-  arrow-parens: [2, as-needed, { requireForBlockBody: true }]
-  arrow-body-style: [error, as-needed]
-  no-useless-computed-key: error
-  no-useless-rename: error
-  no-var: error
-  prefer-const: [error, { ignoreReadBeforeAssign: true }]
-  prefer-template: error
-  template-curly-spacing: [error, never]
-  lines-around-directive:
-    - error
-    -
-      before: always
-      after: always
-  no-spaced-func: 2
-
-  strict: [error, never]
+  ### Best practices ###
+  # require or disallow Yoda conditions
   yoda: [error, never, { exceptRange: true }]
-  dot-notation: [error, { allowKeywords: false }]
-  no-useless-return: error
-  no-implicit-coercion: error
-  prefer-spread: error
-  rest-spread-spacing: [error, never]
 
-  no-unused-vars: 1
-  no-console: 1
+  # I prefer culry braces all the time
+  curly: [error, all] # airbnb default: [error, multi-line]
 
-  # Protractor
-  protractor/no-browser-pause: 1
+  ### Import ###
+  import/prefer-default-export: 0
+
+  ### Errors ###
+  no-console: warn
+  no-debugger: warn
+
+  ### Protractor ###
+  protractor/no-browser-pause: warn
   protractor/no-absolute-url: 0
-  protractor/no-repetitive-selectors: 1
+  protractor/no-repetitive-selectors: warn
 
-  # Async await
-  async-await/space-after-async: 2
-  async-await/space-after-await: 2
+  ### Async await ###
+  async-await/space-after-async: error
+  async-await/space-after-await: error
 

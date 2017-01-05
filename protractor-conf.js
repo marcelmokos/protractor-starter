@@ -1,5 +1,5 @@
-//noinspection JSUnusedGlobalSymbols
-import {SpecReporter} from "jasmine-spec-reporter";
+// noinspection JSUnusedGlobalSymbols
+import { SpecReporter } from "jasmine-spec-reporter";
 
 export const config = {
   framework: "jasmine2",
@@ -8,9 +8,9 @@ export const config = {
   chromeDriver: "node_modules/.bin/chromedriver",
   jasmineNodeOpts: {
     // remove ugly protractor dot reporter
-    print: function () {},
+    print: () => {},
   },
-  onPrepare: function () {
+  onPrepare: () => {
     /**
      * If you are testing against a non-angular site - set ignoreSynchronization setting to true
      *
@@ -40,7 +40,7 @@ export const config = {
           displayFailed: false,    // display summary of all failures after execution
           displayPending: false,   // display summary of all pending specs after execution
         },
-      })
+      }),
     );
   },
   capabilities: {
