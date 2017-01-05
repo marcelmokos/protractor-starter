@@ -176,7 +176,7 @@ All selectors and functions should be placed in Page Object Class. Class should 
  
 Page object files should export only one Page Class as default export and extends ```spec/utils/Page.js``` and implement abstract property 'selector'. 
  
-This will allow you to use ```isDisplayed``` and ```waitUntilDisplayed``` functions and you can avoid repeating boilerplate for this functionality which is needed because there is no synchronization as with angular application.
+This will allow you to use ```isDisplayed``` and ```waitUntilDisplayed``` functions and you can avoid repeating boilerplate for this functionality which is needed because there is no synchronisation as with angular application.
 
 ##### Feature testing
 The files structure of the project should wrap around features instead of pages. 
@@ -187,20 +187,28 @@ I can not see ES5 syntax anymore, this example is written exclusively in ES6.
 There is no visible compilation step, you have correct line numbers in errors and logs which is important for developer experience.
 
 #### Strong linting and automatic code style fixing
-Set up linting is not easy and set up linting to work with testing frameworks is even more complicated.
+Set up linting is not easy and set up linting to work with testing frameworks can be even more complicated.
  
-This project has linting setup in ```.eslintrc.yml``` setting were inherid from ```eslint-config-airbnb-base``` and ```eslint-plugin-protractor```.
+This project has linting setup in ```.eslintrc.yml``` config and inherit settings from ```eslint-config-airbnb-base``` and ```eslint-plugin-protractor```.
 
-Automatic fixes for fixable problems like missing semicolons and so on. 
+Automatic fixes for fixable problems like missing semicolons and so. Helps maintain code style. 
+Goal is to improve code readability, style and ease code reviews.
 
-There are developers that do not use proper IDE which will provide linting and suggestions.
- 
-Automatic fixes helps maintain code style and this starter have goal to improve code style of inexperienced developer. 
+There are developers that do not use proper code editor or IDE which will provide linting and suggestions eslint is command tool and will can run everywhere.
 
 #### VCS pre-commit hook linting
 Pre-commit hooks are scripts that run before each commit. 
  
 Decision of strong linting requires setting up tool to not allow inconsistent code to be committed into a repository.  
+
+```
+"pre-commit": [
+  "lint:pre-comit"
+],
+```
+Eslint rules that are enforced only in pre-comit hook are 
+- "no-console", "no-debuger" allows using console for debugging but will not allow to commit debugging statements
+- "protractor/no-browser-pause" allows to use browser.pause() for debugging but will not allow to commit this statement
 
 #### Why 'yarn' instead of 'npm'
 This decision was done because 'yarn' is faster. 
@@ -247,4 +255,3 @@ https://yarnpkg.com/en/docs/install
 - eslint-plugin-protractor: 
   - github: https://github.com/alecxe/eslint-plugin-protractor
   - npm: https://www.npmjs.com/package/eslint-plugin-protractor
-

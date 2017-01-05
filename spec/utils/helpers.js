@@ -1,26 +1,23 @@
 import scrollIntoView from "./scrollIntoView";
 
 /**
- * @param element {ElementFinder}
- */
-export const getElementId = async element => element.getAttribute("id");
-
-/**
- * @param inputElement {ElementFinder}
+ * @param inputElementWithLabel {ElementFinder}
  * @returns {Promise.<ElementFinder>}
  */
-export const getInputLabelElement = async (inputElement) => {
-  const inputId = await getElementId(inputElement);
+export const getInputsLabelElement = async (inputElementWithLabel) => {
+  const inputId = await inputElementWithLabel.getAttribute("id");
 
   return $(`[for='${inputId}']`);
 };
 
 /**
- * @param inputElement {ElementFinder}
+ * @param element {ElementFinder}
+ * @returns {Promise.<ElementFinder>}
  */
-export const clickOnInputLabel = async (inputElement) => {
-  const label = await getInputLabelElement(inputElement);
+export const scrollAndClick = async (element) => {
+  scrollIntoView(element);
+  await element.click();
 
-  scrollIntoView(label);
-  label.click();
+  return element;
 };
+

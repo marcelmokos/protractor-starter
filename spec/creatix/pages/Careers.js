@@ -1,6 +1,6 @@
-import Page from "../../utils/Page";
 import Common from "./Common";
 import Homepage from "./Homepage";
+import Page from "../../utils/Page";
 
 export default class Careers extends Page {
   selector = $("#page-careers");

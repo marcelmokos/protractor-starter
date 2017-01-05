@@ -8,7 +8,7 @@ export const config = {
   chromeDriver: "node_modules/.bin/chromedriver",
   jasmineNodeOpts: {
     // remove ugly protractor dot reporter
-    print: () => {},
+    print: () => { },
   },
   onPrepare: () => {
     /**
