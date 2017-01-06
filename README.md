@@ -203,10 +203,10 @@ Decision of strong linting requires setting up tool to not allow inconsistent co
 
 ```
 "pre-commit": [
-  "lint:pre-comit"
+  "lint:pre-commit"
 ],
 ```
-Eslint rules that are enforced only in pre-comit hook are 
+Eslint rules that are enforced only in pre-commit hook are 
 - "no-console", "no-debuger" allows using console for debugging but will not allow to commit debugging statements
 - "protractor/no-browser-pause" allows to use browser.pause() for debugging but will not allow to commit this statement
 
