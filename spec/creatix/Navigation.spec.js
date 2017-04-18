@@ -51,10 +51,7 @@ describe("Feature: navigation", () => {
 
     describe("when browser window tablet size", () => {
       beforeAll(() => {
-        browser
-          .manage()
-          .window()
-          .setSize(768, 1024);
+        browser.manage().window().setSize(768, 1024);
       });
 
       it("then menu hamburger should be visible", () => {
@@ -64,10 +61,7 @@ describe("Feature: navigation", () => {
 
     describe("when browser window iPhone5 size", () => {
       beforeAll(() => {
-        browser
-          .manage()
-          .window()
-          .setSize(320, 568);
+        browser.manage().window().setSize(320, 568);
       });
 
       it("then menu hamburger should be visible", () => {

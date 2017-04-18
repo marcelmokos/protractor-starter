@@ -16,4 +16,3 @@ export default class Blog extends Page {
   getCommon = () => new Common();
   pageLink = this.getCommon().getHeader().getNavigation().link.blog;
 }
-

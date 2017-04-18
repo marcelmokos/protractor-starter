@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EclipseCodeFormatter">
+    <option name="defaultSettings" value="true" />
+    <option name="id" value="1473254767282" />
+    <option name="name" value="default" />
+  </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="PDMPlugin">
+    <option name="skipTestSources" value="false" />
   </component>
 </project>

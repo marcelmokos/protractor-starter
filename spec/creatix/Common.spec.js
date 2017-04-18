@@ -2,11 +2,13 @@ import Homepage from "./pages/Homepage";
 
 const page = new Homepage();
 
-const testLink = (link = {
-  element: undefined,
-  href: "",
-  text: "",
-}) => {
+const testLink = (
+  link = {
+    element: undefined,
+    href: "",
+    text: "",
+  },
+) => {
   describe(`link "${link.text}"`, () => {
     it(`should contain href '${link.href}'`, () => {
       expect(link.element.getAttribute("href")).toContain(link.href);
@@ -79,21 +81,27 @@ describe("Common", () => {
     });
 
     testLink({
-      element: footer.link.tel,
-      href: "tel:6304049413",
-      text: "(630) 404-9413",
-    });
-
-    testLink({
-      element: footer.link.facebook,
+      element: footer.link.chicago.facebook,
       href: "https://www.facebook.com/CreatixInc",
-      text: "Facebook",
+      text: "",
     });
 
     testLink({
-      element: footer.link.linkedIn,
+      element: footer.link.chicago.linkedIn,
       href: "https://www.linkedin.com/company/creatix-inc-",
-      text: "LinkedIn",
+      text: "",
+    });
+
+    testLink({
+      element: footer.link.bratislava.facebook,
+      href: "https://www.facebook.com/creatixslovakia",
+      text: "",
+    });
+
+    testLink({
+      element: footer.link.bratislava.linkedIn,
+      href: "https://www.linkedin.com/company/creatix-slovakia",
+      text: "",
     });
 
     describe("copyright", () => {

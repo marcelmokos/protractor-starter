@@ -1,7 +1,6 @@
 import UIComponent from "../../utils/UIComponent";
 
 export default class Common {
-
   /**
    * @returns {Header}
    */
@@ -43,7 +42,7 @@ class Navigation extends UIComponent {
     careers: this.links.get(2),
     blog: this.links.get(3),
     contact: this.links.get(4),
-  }
+  };
 }
 
 /**
@@ -58,15 +57,23 @@ class SubNavigation extends UIComponent {
 class Footer extends UIComponent {
   selector = $("#footer");
 
-  constactLinks = this.selector.$("div.left").$$("a");
-  social = this.selector.$("ul.social");
+  social = this.selector.$$("ul.social");
+  chicago = this.social.get(0).$$("a");
+  bratislava = this.social.get(1).$$("a");
 
   link = {
-    email: this.constactLinks.first(),
-    tel: this.constactLinks.get(1),
-    facebook: this.social.$(".soc-fb"),
-    linkedIn: this.social.$(".soc-ln"),
+    email: this.selector.$("[href='mailto:hello@thinkcreatix.com']"),
+    chicago: {
+      facebook: this.chicago.get(0),
+      linkedIn: this.chicago.get(1),
+      map: this.chicago.get(2),
+    },
+    bratislava: {
+      facebook: this.bratislava.get(0),
+      linkedIn: this.bratislava.get(1),
+      map: this.bratislava.get(2),
+    },
   };
 
-  copyright = this.selector.$("#copyright")
+  copyright = this.selector.$("#copyright");
 }

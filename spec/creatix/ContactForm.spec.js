@@ -63,7 +63,6 @@ describe("Feature: Contact Form", () => {
             });
           });
 
-
           describe("Async test example", () => {
             const input1 = typeInputs.website;
             const input2 = typeInputs.webApp;
@@ -89,7 +88,9 @@ describe("Feature: Contact Form", () => {
               const label1 = await getInputsLabelElement(input1);
               const label2 = await getInputsLabelElement(input1);
 
-              expect(await label1.getAttribute("class")).toBe(await label2.getAttribute("class"));
+              expect(await label1.getAttribute("class")).toBe(
+                await label2.getAttribute("class"),
+              );
             });
           });
         });

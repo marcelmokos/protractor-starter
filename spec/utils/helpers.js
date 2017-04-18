@@ -20,4 +20,3 @@ export const scrollAndClick = async (element) => {
 
   return element;
 };
-
