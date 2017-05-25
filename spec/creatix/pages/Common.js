@@ -58,8 +58,8 @@ class Footer extends UIComponent {
   selector = $("#footer");
 
   social = this.selector.$$("ul.social");
-  chicago = this.social.get(0).$$("a");
-  bratislava = this.social.get(1).$$("a");
+  chicago = this.social.get(0).$$("a"); // eslint-disable-line
+  bratislava = this.social.get(1).$$("a"); // eslint-disable-line
 
   link = {
     email: this.selector.$("[href='mailto:hello@thinkcreatix.com']"),

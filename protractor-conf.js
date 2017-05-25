@@ -32,22 +32,32 @@ export const config = {
           displayNumber: true,    // display each suite number (hierarchical)
         },
         spec: {
+          displaySuccessful: true,
           displayPending: true,   // display each pending spec
           displayDuration: true,  // display each spec duration
         },
         summary: {
-          displaySuccesses: false, // display summary of all successes after execution
-          displayFailed: false,    // display summary of all failures after execution
+          displaySuccessful: false, // display summary of all successes after execution
+          displayFailed: true,    // display summary of all failures after execution
           displayPending: false,   // display summary of all pending specs after execution
+          displayDuration: true,
         },
       }),
     );
+  },
+  // Spec patterns are relative to the location of the spec file. They may
+  // include glob patterns.
+  suites: {
+    creatix: 'spec/creatix/*.spec.js',
+    homepage: 'spec/**/Homepage.spec.js',
   },
   capabilities: {
     browserName: "chrome",
     chromeOptions: {
       // http://peter.sh/experiments/chromium-command-line-switches/#test-type
       args: ["--test-type"],
+      // https://github.com/angular/protractor/blob/master/docs/browser-setup.md#using-headless-chrome
+      // args: ["--headless", "--disable-gpu", "--window-size=800x600"],
     },
   },
 };

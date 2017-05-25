@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <includedPredefinedLibrary name="ECMAScript 6" />
+    <file url="PROJECT" libraries="{jest-DefinitelyTyped, lodash-DefinitelyTyped, prop-types-DefinitelyTyped, protractor-helpers-DefinitelyTyped, react-DefinitelyTyped, react-intl-DefinitelyTyped, react-redux-DefinitelyTyped, react-redux-i18n-DefinitelyTyped, redux-form-DefinitelyTyped, webdriverio-DefinitelyTyped, webpack-DefinitelyTyped, webrtc-DefinitelyTyped}" />
   </component>
 </project>

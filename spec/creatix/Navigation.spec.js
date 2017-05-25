@@ -19,9 +19,8 @@ describe("Feature: navigation", () => {
     work,
   };
 
-  Object.keys(scenarios).forEach((pageName) => {
+  Object.entries(scenarios).forEach(([pageName, page]) => {
     describe(`when '${pageName}' page link is clicked`, () => {
-      const page = scenarios[pageName];
       beforeAll(() => {
         page.get();
       });
