@@ -42,7 +42,8 @@ export default class UIComponent {
     browser.wait(
       () => this.isDisplayed(),
       this.waitUntilDisplayedTimeout,
-      `Failed while waiting for "${this.selector.locator()}" of Page Object Class '${this.constructor.name}' to display.`,
+      `Failed while waiting for "${this.selector.locator()}" of Page Object Class '${this
+        .constructor.name}' to display.`,
     );
   };
 }
