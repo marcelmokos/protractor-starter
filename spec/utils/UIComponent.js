@@ -14,11 +14,9 @@ export default class UIComponent {
 
   checkSelectorExist = () => {
     if (this.selector === undefined) {
-      throw new TypeError(
-        `Class '${this.constructor.name}' ` +
+      throw new TypeError(`Class '${this.constructor.name}' ` +
           "extends 'UIComponent' possibly 'Page' Object Class and have to implement abstract property 'selector' " +
-          "when 'isDisplayed' or 'waitUntilDisplayed' are used",
-      );
+          "when 'isDisplayed' or 'waitUntilDisplayed' are used");
     }
   };
 
@@ -42,8 +40,9 @@ export default class UIComponent {
     browser.wait(
       () => this.isDisplayed(),
       this.waitUntilDisplayedTimeout,
-      `Failed while waiting for "${this.selector.locator()}" of Page Object Class '${this
-        .constructor.name}' to display.`,
+      `Failed while waiting for "${this.selector.locator()}" of Page Object Class '${
+        this.constructor.name
+      }' to display.`,
     );
   };
 }

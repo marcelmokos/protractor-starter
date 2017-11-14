@@ -2,13 +2,11 @@ import Homepage from "./pages/Homepage";
 
 const page = new Homepage();
 
-const testLink = (
-  link = {
-    element: undefined,
-    href: "",
-    text: "",
-  },
-) => {
+const testLink = (link = {
+  element: undefined,
+  href: "",
+  text: "",
+}) => {
   describe(`link "${link.text}"`, () => {
     it(`should contain href '${link.href}'`, () => {
       expect(link.element.getAttribute("href")).toContain(link.href);
@@ -26,7 +24,10 @@ describe("Common", () => {
   });
 
   describe("navigation", () => {
-    const navigation = page.getCommon().getHeader().getNavigation();
+    const navigation = page
+      .getCommon()
+      .getHeader()
+      .getNavigation();
 
     it("should have 5 links", () => {
       expect(navigation.links.count()).toBe(5);
@@ -64,7 +65,10 @@ describe("Common", () => {
   });
 
   describe("sub navigation", () => {
-    const subNavigation = page.getCommon().getHeader().getSubNavigation();
+    const subNavigation = page
+      .getCommon()
+      .getHeader()
+      .getSubNavigation();
 
     it("should have 5 links", () => {
       expect(subNavigation.links.count()).toBe(5);

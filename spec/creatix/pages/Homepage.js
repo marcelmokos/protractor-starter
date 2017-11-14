@@ -8,7 +8,10 @@ export default class Homepage extends Page {
     /**
      * Browser window will maximize width and height
      */
-    browser.manage().window().maximize();
+    browser
+      .manage()
+      .window()
+      .maximize();
 
     browser.baseUrl = "http://www.thinkcreatix.com/";
     browser.get("/");
